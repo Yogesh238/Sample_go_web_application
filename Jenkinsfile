@@ -11,7 +11,7 @@ pipeline {
         stage('Compile & Build') {
             steps {
 	         //sh '/usr/local/go/bin/go build main.go'
-		       sh 'go build main.go'
+		       sh '/usr/bin/go build main.go'
             }
         }
     }
