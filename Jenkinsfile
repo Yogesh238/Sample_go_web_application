@@ -18,7 +18,7 @@ pipeline {
                     steps {
            withSonarQubeEnv(credentialsId: 'sonarqube', installationName: 'sonar')
         {
-              sh 'sonar-scanner \
+              sh '/opt/sonar-scanner/bin/sonar-scanner \
   -Dsonar.projectKey=demo-test \
   -Dsonar.sources=. \
   -Dsonar.host.url=http://52.204.215.151:9000/'
