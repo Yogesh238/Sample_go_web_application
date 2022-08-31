@@ -14,13 +14,14 @@ pipeline {
 		       sh '/usr/bin/go build main.go'
             }
         }
+	    stage(sonarqube analysis)
                     steps {
            withSonarQubeEnv(credentialsId: 'sonarqube', installationName: 'sonar')
         {
-              sh """sonar-scanner \
+              sh 'sonar-scanner \
   -Dsonar.projectKey=demo-test \
   -Dsonar.sources=. \
-  -Dsonar.host.url=http://52.204.215.151:9000/"""
+  -Dsonar.host.url=http://52.204.215.151:9000/'
            
     }
             }
