@@ -8,12 +8,12 @@ pipeline {
                 url: "https://github.com/Yogesh238/Sample_go_web_application.git"
         }
     }
-        stage('Compile & Build') {
-            steps {
-	         //sh '/usr/local/go/bin/go build main.go'
-		       sh '/usr/bin/go build main.go'
-            }
-        }
+ //       stage('Compile & Build') {
+ //           steps {
+//	         //sh '/usr/local/go/bin/go build main.go'
+//		       sh '/usr/bin/go build main.go'
+//            }
+//        }
 	    stage('sonarqube analysis'){
                     steps {
            withSonarQubeEnv(credentialsId: 'sonarqube', installationName: 'sonar')
