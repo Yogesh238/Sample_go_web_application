@@ -14,7 +14,7 @@ pipeline {
 		       sh '/usr/bin/go build main.go'
             }
         }
-	    stage('sonarqube analysis')
+	    stage('sonarqube analysis'){
                     steps {
            withSonarQubeEnv(credentialsId: 'sonarqube', installationName: 'sonar')
         {
